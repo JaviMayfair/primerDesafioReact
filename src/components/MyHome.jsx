@@ -9,7 +9,7 @@ function MyHome() {
                 <MyHeader />
             </header>
 
-            <div style={{ display: 'flex' }}>
+            {/*<div style={{ display: 'flex' }}>
                 <CardPizza
                     name="Napolitana"
                     price={5950}
@@ -22,7 +22,7 @@ function MyHome() {
                     name="Pepperoni"
                     price={6950}
                     ingredients={["mozzarella", "pepperoni", "orégano"]} img="https://ca.ooni.com/cdn/shop/articles/Ooni_Diablo_resized_6fdb6499-e70d-4f77-96ac-cdb65ad4090f.jpg?crop=center&height=800&v=1657040361&width=800" />
-            </div>
+            </div>*/}
         </>
     )
 };
