@@ -5,6 +5,7 @@ import MyHome from './components/MyHome';
 import MyFooter from './components/MyFooter';
 import MyRegister from './components/MyRegister';
 import MyLogin from './components/MyLogin';
+import MyCart from './components/MyCart';
 
 function App() {
   return (
@@ -21,8 +22,12 @@ function App() {
       <MyRegister/>
      </div>*/}
 
-     <div style={{display: "flex", justifyContent: "center"}}>
+     {/*<div style={{display: "flex", justifyContent: "center"}}>
       <MyLogin/>
+     </div>*/}
+
+     <div>
+      <MyCart/>
      </div>
 
      <div>
