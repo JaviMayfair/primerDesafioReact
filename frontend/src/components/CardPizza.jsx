@@ -35,6 +35,8 @@ export default function CardPizza(props) {
               <br></br>
               Precio: $
               <span className="text-primary fs-6">{props.price}</span>
+              <br />
+              <strong>Descripción:</strong> {props.desc}
             </Card.Text>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <Button variant="primary" onClick={descontarPizza}>Eliminar 🗑️</Button>
