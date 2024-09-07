@@ -1,9 +1,9 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom'
 
 function MyNavbar() {
   const precio = 25000
@@ -20,13 +20,13 @@ function MyNavbar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">🍕 Home</Nav.Link>
-            {token ? (<><Nav.Link href="#action2">👤 Profile</Nav.Link>
-              <Nav.Link href="#action3">🔒 Logout</Nav.Link></>) : (<><Nav.Link href="#action4">🔒 Login</Nav.Link>
-                <Nav.Link href="#action5">📄 Register</Nav.Link></>)}
+            <Link to="/" className="#action1">🍕 Home</Link>
+            {token ? (<><Link to="/MyProfile" className="#action2">👤 Profile</Link>
+              <Link to="/MyLogin" className="#action3">🔒 Logout</Link></>) : (<><Link to="/MyLogin" className="#action4">🔒 Login</Link>
+                <Link to="/MyRegister" className="#action5">📄 Register</Link><Link to="/MyProfile" className="#action6">🧙‍♂️ Mi Perfil</Link></>)}
             <Nav.Link href="#" disabled></Nav.Link>
           </Nav>
-          <Button variant="outline-success">🛒 Total: ${precio.toLocaleString()}</Button>
+          <Button variant="outline-success"><Link to="/MyCart"> 🛒 Total: ${precio.toLocaleString()} </Link></Button>
 
         </Navbar.Collapse>
       </Container>

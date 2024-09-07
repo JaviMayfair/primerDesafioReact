@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { pizzas } from '../data/pizzas'
-import CardPizza from './CardPizza'
+import CardPizza from '../components/CardPizza'
 
 
 

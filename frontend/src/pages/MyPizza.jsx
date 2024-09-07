@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import CardPizza from './CardPizza';
+import CardPizza from '../components/CardPizza';
 
 export default function MyPizza() {
     const [pizza, setPizza] = useState()
