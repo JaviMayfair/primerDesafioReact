@@ -3,11 +3,13 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 function MyNavbar() {
-  const precio = 25000
   const token = false;
+  const {totalPagar} = useContext(CartContext)
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -26,7 +28,7 @@ function MyNavbar() {
                 <Link to="/MyRegister" className="#action5">📄 Register</Link><Link to="/MyProfile" className="#action6">🧙‍♂️ Mi Perfil</Link></>)}
             <Nav.Link href="#" disabled></Nav.Link>
           </Nav>
-          <Button variant="outline-success"><Link to="/MyCart"> 🛒 Total: ${precio.toLocaleString()} </Link></Button>
+          <Button variant="outline-success"><Link to="/MyCart"> 🛒 Total: ${totalPagar.toLocaleString()} </Link></Button>
 
         </Navbar.Collapse>
       </Container>

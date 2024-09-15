@@ -1,21 +1,13 @@
 import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
 export default function CardPizza(props) {
-  const [cuenta, setCuenta] = useState(0)
-  const descontarPizza = () => {
-    if (cuenta - 1 < 0) {
-      return
-    }
-    setCuenta(cuenta - 1)
-    props.actualizarTotal(props.name, cuenta - 1, props.price * -1)
-  }
+  const {sumarPizza, restarPizza} = useContext(CartContext)
+  
 
-  const sumarPizza = () => {
-    setCuenta(cuenta + 1)
-    props.actualizarTotal(props.name, cuenta + 1, props.price)
-  }
 
 
   return (
@@ -39,9 +31,11 @@ export default function CardPizza(props) {
               <strong>Descripción:</strong> {props.desc}
             </Card.Text>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Button variant="primary" onClick={descontarPizza}>Eliminar 🗑️</Button>
-              <span style={{ border: 'solid 2px', padding: '5px' }}>Cantidad: <br />{cuenta}</span>
-              <Button variant="primary" onClick={sumarPizza}>Añadir 🛒</Button>
+              <Button variant="primary" onClick={() => {restarPizza(props)}}>Eliminar 🗑️</Button>
+              {
+                props.qty && <span style={{ border: 'solid 2px', padding: '5px' }}>Cantidad: <br />{props.qty}</span>
+              }
+              <Button variant="primary" onClick={() => {sumarPizza(props)}}>Añadir 🛒</Button>
             </div>
           </Card.Body>
         </Card>
