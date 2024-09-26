@@ -22,7 +22,7 @@ function MyHome() {
 
            <div style={{ display: 'flex', flexWrap: 'wrap'}}>
                 {listaPizzas.map((pizza) => (
-                    <CardPizza key={pizza.id} name={pizza.name} price={pizza.price} ingredients={pizza.ingredients} img={pizza.img}/>
+                    <CardPizza key={pizza.id} id={pizza.id} name={pizza.name} price={pizza.price} ingredients={pizza.ingredients} img={pizza.img}/>
                 ))}
             </div>
         </>

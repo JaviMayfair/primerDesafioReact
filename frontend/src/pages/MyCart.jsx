@@ -2,12 +2,14 @@ import React, { useState, useContext } from 'react'
 import { pizzas } from '../data/pizzas'
 import CardPizza from '../components/CardPizza'
 import { CartContext } from '../context/CartContext';
+import { UserContext } from '../context/UserContext';
 
 
 
 
 export default function MyCart() {
     const {listaPizzas, totalPagar} = useContext(CartContext)
+    const {token} = useContext(UserContext)
 
     return (
         <>
@@ -22,7 +24,7 @@ export default function MyCart() {
                 <div style={{ border: 'solid 2px' }}>
                     <h4>🪙 Total a pagar: {totalPagar}</h4>
                 </div>
-                <button style={{ border: 'solid', margin: '5px' }}>Pagar 👛</button>
+                <button disabled={!token} style={{ border: 'solid', margin: '5px' }}>Pagar 👛</button>
 
             </div>
 

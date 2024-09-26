@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 export default function CardPizza(props) {
   const {sumarPizza, restarPizza} = useContext(CartContext)
@@ -16,7 +17,7 @@ export default function CardPizza(props) {
         <Card style={{ width: '22rem', textAlign: 'center' }}>
           <Card.Img style={{ width: '18rem', height: '18rem', margin: "10px auto" }} variant="top" src={props.img} />
           <Card.Body>
-            <Card.Title>{props.name}</Card.Title>
+            <Card.Title><Link to= {"/Pizza/" + props.id} >{props.name}</Link></Card.Title>
             <Card.Text>
               Ingredientes:
               <ul>
