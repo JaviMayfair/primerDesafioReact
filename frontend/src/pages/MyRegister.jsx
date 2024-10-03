@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 const MyRegister = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmarPassword, setConfirmarPassword] = useState ("");
     const [error, setError] = useState(false)
+    const {register} = useContext(UserContext)
   
     const validarDatos = (e) => {
       e.preventDefault()
@@ -17,6 +19,7 @@ const MyRegister = () => {
       setEmail('')
       setPassword('')
       setConfirmarPassword('')
+      register(email, password)
     }
   
     return (

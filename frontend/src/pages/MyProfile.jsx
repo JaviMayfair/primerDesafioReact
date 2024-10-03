@@ -1,6 +1,11 @@
-import React from 'react'
+import {useContext} from 'react'
+import { UserContext } from '../context/UserContext'
 
 export default function MyProfile() {
+  const {email, logout} = useContext(UserContext)
+
+
+
   return (
 
     <>
@@ -13,8 +18,8 @@ export default function MyProfile() {
         </div>
 
         <div style={{ padding: "20px" }}>
-          <h3><strong>Bienvenid@: </strong>javiera.pacheco@correo.com</h3>
-          <button style={{ border: "solid 1px", margin: "10px" }}>Cerrar Sesión</button>
+          <h3><strong>Bienvenid@: </strong>{email}</h3>
+          <button onClick={logout} style={{ border: "solid 1px", margin: "10px" }}>Cerrar Sesión</button>
         </div>
 
       </div>
